@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
-import { SklepComponent } from './sklep/sklep.component';
-import { AddItemComponent } from './add-item/add-item.component';
-import { DetailItemComponent } from './detail-item/detail-item.component';
-import { EditItemComponent } from './edit-item/edit-item.component';
+import { SklepComponent } from './components/sklep/sklep.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
+import { DetailItemComponent } from './components/detail-item/detail-item.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 @NgModule({
   declarations: [
