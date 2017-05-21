@@ -1,4 +1,4 @@
-<div *ngIf="wear" class="col-xs-7">
+<div *ngIf="wear">
   <h2 class="text-center">Szczególy produktu: {{wear.name}}</h2>
   <div><label>Id: </label> {{wear.id}}</div>
 
@@ -19,4 +19,5 @@
       Przegladaj obrazki <input  type="file" style="display: none;">
   </label>
   </div>
+  <button (click)="goBack()">Back</button>
 </div>

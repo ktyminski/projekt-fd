@@ -9,5 +9,9 @@ export class WearService {
   getClothes(): Promise<Wear[]> {
     return Promise.resolve(CLOTHES);
   }
+  getSingleCloth(id: number): Promise<Wear> {
+    return this.getClothes()
+           .then(clothes => clothes.find(wear => wear.id === id));
+  }
 
 }

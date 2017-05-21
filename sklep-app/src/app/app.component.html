@@ -1,15 +1,8 @@
-<div class="container jumbotron">
   <h1 class="text-center">{{title}}</h1>
-  <br>
-  <div class="row">
-    <div class="col-xs-5">
-      <h2 class="text-center">Lista produktów sklepu:</h2>
-      <li class ="text-center" *ngFor="let wear of clothes" [class.selected]="wear === selectedWear" (click)="onSelect(wear)">
-          <p class = "badgers">{{wear.id}}  {{wear.name}}</p>
-      </li>
-    </div>
-    <div class="col-xs-7">
-      <app-detail-item [wear]="selectedWear"></app-detail-item>
-    </div>
+
+  <div class="text-center buttons">
+    <button class = "btn btn-primary" routerLink="/dashboard">Przeglądaj sklep</button>
+    <button class = "btn btn-primary" routerLink="/clothes">Edycja ubrań</button>
   </div>
-</div>
+
+  <router-outlet></router-outlet>

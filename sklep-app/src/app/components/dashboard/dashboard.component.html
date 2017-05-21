@@ -1,0 +1,7 @@
+<div class="">
+  <a *ngFor="let wear of clothes"  [routerLink]="['/detail', wear.id]">
+    <div class="">
+      <h4>{{wear.name}}</h4>
+    </div>
+  </a>
+</div>
