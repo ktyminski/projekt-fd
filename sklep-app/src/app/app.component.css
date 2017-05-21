@@ -1,5 +1,6 @@
 li{
   list-style-type: none;
+  cursor: pointer;
 }
 
 .badgers{
@@ -12,4 +13,7 @@ li{
   max-width: 300px;
   max-height: 300px;
   border-radius: 20px;
+}
+.selected p{
+  background-color: #bbb ;
 }

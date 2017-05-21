@@ -4,32 +4,12 @@
   <div class="row">
     <div class="col-xs-5">
       <h2 class="text-center">Lista produktów sklepu:</h2>
-      <li class ="text-center" *ngFor="let wear of clothes" (click)="onSelect(wear)">
+      <li class ="text-center" *ngFor="let wear of clothes" [class.selected]="wear === selectedWear" (click)="onSelect(wear)">
           <p class = "badgers">{{wear.id}}  {{wear.name}}</p>
       </li>
     </div>
-
-    <div *ngIf="selectedWear" class="col-xs-7">
-      <h2 class="text-center">Szczególy produktu: {{selectedWear.name}}</h2>
-      <div><label>Id: </label> {{selectedWear.id}}</div>
-
-       <div> <img class="img-responsive image" src="src/app/clothes.jpg" alt="Ubrania"></div>
-
-      <div class="form-group">
-        <label for="name">Nazwa:</label>
-        <input [(ngModel)]="selectedWear.name" type="name" class="form-control" id="name" placeholder="nazwa">
-      </div>
-
-      <div class="form-group">
-        <label for="comment">Opis:</label>
-        <textarea [(ngModel)]="selectedWear.description" class="form-control" rows="5" id="comment" placeholder="opis"></textarea>
-      </div>
-
-      <div class="form-group">
-      <label class="btn btn-default btn-file">
-          Przegladaj obrazki <input  type="file" style="display: none;">
-      </label>
-      </div>
+    <div class="col-xs-7">
+      <app-detail-item [wear]="selectedWear"></app-detail-item>
     </div>
   </div>
 </div>

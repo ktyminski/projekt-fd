@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Input } from '@angular/core';
+
+import { Wear } from '../../model/wear';
 
 @Component({
   selector: 'app-detail-item',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-item.component.css']
 })
 export class DetailItemComponent implements OnInit {
+
+  @Input() wear: Wear;
 
   constructor() { }
 
