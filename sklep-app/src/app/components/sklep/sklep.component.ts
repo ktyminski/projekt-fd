@@ -6,7 +6,6 @@ import { Wear } from '../../model/wear';
 import { WearService } from '../../services/wear.service';
 
 
-
 @Component({
   selector: 'app-sklep',
   templateUrl: './sklep.component.html',
@@ -31,7 +30,7 @@ export class SklepComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getClothes();
+     this.getClothes();
   }
 
   gotoDetail(): void {

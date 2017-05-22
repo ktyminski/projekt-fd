@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ngx-bootstrap';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-api.module';
+
+import { CLOTHES } from './database/clothesbase';
+
 import { AppComponent } from './app.component';
 import { SklepComponent } from './components/sklep/sklep.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
@@ -27,7 +31,8 @@ import { RoutingModule } from './routes/routing.module'
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
-    RoutingModule
+    RoutingModule,
+    InMemoryWebApiModule.forRoot(CLOTHES),
   ],
   providers: [WearService],
   bootstrap: [AppComponent]

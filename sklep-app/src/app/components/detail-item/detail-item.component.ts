@@ -13,7 +13,7 @@ import { WearService } from '../../services/wear.service';
 })
 export class DetailItemComponent implements OnInit {
 
-  @Input() wear: Wear;
+  wear: Wear;
 
   constructor(
     private wearService: WearService,
@@ -21,13 +21,22 @@ export class DetailItemComponent implements OnInit {
     private location: Location
   ){ }
 
-  ngOnInit(): void {
+  getCloth() : void {
     this.route.params
-    .switchMap((params: Params) => this.wearService.getSingleCloth(+params['id']))
-    .subscribe(wear => this.wear = wear);
+      .switchMap((params: Params) => this.wearService.getSingleCloth(+params['id']))
+      .subscribe(wear => this.wear = wear);
+  }
+
+  ngOnInit(): void {
+    this.getCloth()
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.wearService.update(this.wear)
+      .then(() => this.goBack());
   }
 }
