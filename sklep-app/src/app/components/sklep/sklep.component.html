@@ -1,15 +1,18 @@
 <div class="container jumbotron">
   <br>
-      <h2 class="text-center">Lista produktów sklepu:</h2>
-      <ul>
-        <li class ="text-center" *ngFor="let wear of clothes" [class.selected]="wear === selectedWear" (click)="onSelect(wear)">
-            <p class = "badgers">{{wear.id}}  {{wear.name}}</p>
-        </li>
-      </ul>
+  <h2 class="text-center">Lista produktów sklepu:</h2>
+  <ul>
+    <li class ="text-center" *ngFor="let wear of clothes" [class.selected]="wear === selectedWear" (click)="onSelect(wear)">
+      <p class = "badgers">{{wear.id}}  {{wear.name}}  <button class="delete" (click)="delete(wear); $event.stopPropagation()">x</button></p>
+    </li>
+  </ul>
   <div *ngIf="selectedWear">
     <h2>
       {{selectedWear.name }}
     </h2>
     <button class="btn btn-success" (click)="gotoDetail()">Edytuj</button>
+  </div>
+  <div>
+    <button class = "btn btn-primary" routerLink="/additem">Dodaj produkt</button>
   </div>
 </div>

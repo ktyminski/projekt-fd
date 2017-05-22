@@ -3,4 +3,5 @@ export class Wear {
   name: string;
   image : string;
   description : string;
+  price : number;
 }

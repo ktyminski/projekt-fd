@@ -1,3 +1,27 @@
-<p>
-  add-item works!
-</p>
+<div>
+  <div class="form-group">
+    <label for="name">Nazwa:</label>
+    <input #wearName type="name" class="form-control" id="name" placeholder="nazwa">
+  </div>
+
+  <div class="form-group">
+    <label for="price">Cena:</label>
+    <input #wearPrice type="price" class="form-control" id="price" placeholder="cena">
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Opis:</label>
+    <textarea #wearDescription class="form-control" rows="5" id="comment" placeholder="opis"></textarea>
+  </div>
+
+  <div class="form-group">
+  <label class="btn btn-default btn-file">
+      Przegladaj obrazki <input  type="file" style="display: none;">
+  </label>
+  </div>
+
+  <button (click)="add(wearName.value,wearPrice.value,wearDescription.value)">
+    Dodaj
+  </button>
+  <button class = "btn btn-primary" routerLink="/clothes">Wstecz</button>
+</div>

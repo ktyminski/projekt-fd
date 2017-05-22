@@ -36,4 +36,13 @@ export class SklepComponent implements OnInit {
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedWear.id]);
   }
+
+  delete(wear: Wear): void {
+  this.wearService
+      .delete(wear.id)
+      .then(() => {
+        this.clothes = this.clothes.filter(h => h !== wear);
+        if (this.selectedWear === wear) { this.selectedWear = null; }
+      });
+}
 }
