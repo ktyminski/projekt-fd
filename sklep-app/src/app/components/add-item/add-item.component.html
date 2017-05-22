@@ -1,4 +1,7 @@
 <div>
+
+  <div *ngIf="image"> <img class="img-responsive image" src={{image}} alt="Ubranie"></div>
+
   <div class="form-group">
     <label for="name">Nazwa:</label>
     <input #wearName type="name" class="form-control" id="name" placeholder="nazwa">
@@ -15,13 +18,15 @@
   </div>
 
   <div class="form-group">
-  <label class="btn btn-default btn-file">
-      Przegladaj obrazki <input  type="file" style="display: none;">
+  <label class="btn btn-success btn-file">
+      Przegladaj obrazki <input #wearImage (change)="fileChange($event)"  type="file" style="display: none;">
   </label>
+  <p>Aktualnie wybrany obrazek : {{imageName}}</p>
   </div>
 
-  <button (click)="add(wearName.value,wearPrice.value,wearDescription.value)">
+
+  <button class = "btn btn-primary" (click)="add(wearName.value,wearPrice.value,wearDescription.value)">
     Dodaj
   </button>
-  <button class = "btn btn-primary" routerLink="/clothes">Wstecz</button>
+  <button class = "btn btn-danger" routerLink="/clothes">Wstecz</button>
 </div>

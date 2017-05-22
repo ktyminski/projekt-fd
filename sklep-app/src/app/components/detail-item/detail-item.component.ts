@@ -36,6 +36,7 @@ export class DetailItemComponent implements OnInit {
   }
 
   save(): void {
+    console.log(this.wear);
     this.wearService.update(this.wear)
       .then(() => this.goBack());
   }
