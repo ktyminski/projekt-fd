@@ -14,6 +14,8 @@ import { WearService } from '../../services/wear.service';
 export class DetailItemComponent implements OnInit {
 
   wear: Wear;
+  image : string ; //image BASE64
+  imageName : string ;
 
   constructor(
     private wearService: WearService,
@@ -24,11 +26,11 @@ export class DetailItemComponent implements OnInit {
   getCloth() : void {
     this.route.params
       .switchMap((params: Params) => this.wearService.getSingleCloth(+params['id']))
-      .subscribe(wear => this.wear = wear);
+      .subscribe((wear) => { this.wear = wear, this.image = wear.image});
   }
 
   ngOnInit(): void {
-    this.getCloth()
+    this.getCloth();
   }
 
   goBack(): void {
@@ -39,5 +41,20 @@ export class DetailItemComponent implements OnInit {
     console.log(this.wear);
     this.wearService.update(this.wear)
       .then(() => this.goBack());
+  }
+
+  fileChange(fileInput: any){
+    this.imageName = fileInput.target.files[0].name;
+    readFile(fileInput.target.files[0], (e : any) => {
+              this.image = e.target.result;
+              this.wear.image = this.image;
+
+       });
+
+    function readFile(file, Callback){
+      var reader = new FileReader();
+      reader.onload = Callback;
+      reader.readAsDataURL(file);
+    }
   }
 }
