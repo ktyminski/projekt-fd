@@ -1,0 +1,20 @@
+.weardesc{
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.jumbotron{
+  cursor: pointer;
+}
+
+.wearimg{
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.weardesc{
+  margin-top: 20px;
+}
+.wearname{
+
+}

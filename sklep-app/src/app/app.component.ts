@@ -9,5 +9,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-    title = 'Sklep odzieżowy';
+    title = 'REVERSED';
+    desc = "Your Clothes, Your Style";
 }
