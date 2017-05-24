@@ -1,0 +1,23 @@
+.jumbotron{
+  max-width: 800px;
+}
+h3{
+  margin-top: -30px;
+  padding-bottom: 45px;
+}
+.image{
+  padding-bottom: 20px;
+}
+.btn-file{
+  letter-spacing: 2px;
+  border-bottom: 1px solid #222;
+  margin-bottom: 20px;
+}
+.btn:hover{
+  background-color: #ccc;
+}
+.btn-file:hover{
+  background-color: inherit;
+  color: #aaa;
+
+}

@@ -1,12 +1,12 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let wear of clothes"  [routerLink]="['/detail', wear.id]">
+  <div class="row ">
+    <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let wear of clothes" [routerLink]="['/detail', wear.id]">
         <div class="jumbotron text-center">
             <h2 class ="wearname">{{wear.name}}</h2>
-            <h2 ><strong>{{wear.price}}</strong> $</h2>
+            <h2 >{{wear.price}} $</h2>
             <img class="img-responsive image center-block wearimg" src={{wear.image}} alt="Ubranie">
             <p class ="weardesc"><i>{{wear.description}}</i></p>
-        </div>
+          </div>
+      </div>
     </div>
   </div>
-</div>

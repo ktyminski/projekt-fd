@@ -5,19 +5,25 @@ li{
 }
 
 .badgers{
-  background-color: #999;
-  border-radius: 10px;
+  background-color: #ddd;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.image{
-  border: 2px solid black;
-  max-width: 300px;
-  max-height: 300px;
-  border-radius: 20px;
-}
 .selected p{
   background-color: #bbb ;
 }
 .jumbotron {
   border-radius: 20px;
+}
+.selectedname{
+  margin-right: 20px;
+}
+.btn:hover{
+  background-color: #ccc;
+
+}
+.btn-delete{
 }

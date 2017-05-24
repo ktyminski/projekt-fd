@@ -1,30 +1,32 @@
-<div *ngIf="wear">
-  <h2 class="text-center">Szczególy produktu: {{wear.name}}</h2>
-  <div><label>Id: </label> {{wear.id}}</div>
+<div class="container">
+  <div *ngIf="wear" class="jumbotron text-center center-block">
+    <h2 class="text-center">Szczególy produktu: {{wear.name}}</h2>
+    <div><label>Id: </label> {{wear.id}}</div>
 
-  <div> <img class="img-responsive image" src={{image}} alt="Ubranie"></div>
+    <div> <img class="img-responsive image center-block" src={{image}} alt="Ubranie"></div>
 
-  <div class="form-group">
-    <label for="name">Nazwa:</label>
-    <input [(ngModel)]="wear.name" type="name" class="form-control" id="name" placeholder="nazwa">
+    <div class="form-group">
+      <label for="name">Nazwa:</label>
+      <input [(ngModel)]="wear.name" type="name" class="form-control" id="name" placeholder="nazwa">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Cena:</label>
+      <input [(ngModel)]="wear.price" type="price" class="form-control" id="price" placeholder="cena">
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Opis:</label>
+      <textarea [(ngModel)]="wear.description" class="form-control" rows="5" id="comment" placeholder="opis"></textarea>
+    </div>
+
+    <div class="form-group">
+    <label class="btn btn-file">
+        Przegladaj obrazki <input #wearImage (change)="fileChange($event)"  type="file" style="display: none;">
+    </label>
+    <p>Aktualnie wybrany obrazek : {{imageName}}</p>
+    </div>
+    <button class="btn" (click)="save()">Zapisz</button>
+    <button class="btn" (click)="goBack()">Wstecz</button>
   </div>
-
-  <div class="form-group">
-    <label for="price">Cena:</label>
-    <input [(ngModel)]="wear.price" type="price" class="form-control" id="price" placeholder="cena">
-  </div>
-
-  <div class="form-group">
-    <label for="comment">Opis:</label>
-    <textarea [(ngModel)]="wear.description" class="form-control" rows="5" id="comment" placeholder="opis"></textarea>
-  </div>
-
-  <div class="form-group">
-  <label class="btn btn-success btn-file">
-      Przegladaj obrazki <input #wearImage (change)="fileChange($event)"  type="file" style="display: none;">
-  </label>
-  <p>Aktualnie wybrany obrazek : {{imageName}}</p>
-  </div>
-  <button (click)="save()">Zapisz</button>
-  <button (click)="goBack()">Wstecz</button>
 </div>

@@ -23,11 +23,11 @@ export class AddItemComponent implements OnInit {
 
   constructor(private wearService: WearService, private router: Router) { }
 
-  add(name: string, description : string, price : number): void {
+  add(name: string,  price : number, description : string,): void {
     name = name.trim();
     var image = this.image;
     if (!name) { return; }
-    this.wearService.create(name, description, price, image)
+    this.wearService.create(name, price, description, image)
       .then(wear => {
         console.log(`Dodano nowy obiekt ${wear.name}`);
         this.router.navigate(['/clothes']);

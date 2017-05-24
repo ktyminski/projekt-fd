@@ -9,12 +9,17 @@
 }
 
 .wearimg{
-  border: 1px solid #ccc;
   border-radius: 20px;
 }
+
 .weardesc{
   margin-top: 20px;
 }
-.wearname{
 
+.wearname{
+  letter-spacing: 3px;
+  padding-bottom: 20px;
+  font-weight: 800;
+  border-bottom: 3px solid #222;
+  border-width: thick;
 }

@@ -3,16 +3,16 @@
   <h2 class="text-center">Lista produktów sklepu:</h2>
   <ul>
     <li class ="text-center" *ngFor="let wear of clothes" [class.selected]="wear === selectedWear" (click)="onSelect(wear)">
-      <p class = "badgers">{{wear.id}}  {{wear.name}}  <button class="delete" (click)="delete(wear); $event.stopPropagation()">x</button></p>
+      <p class = "badgers"><span class="pull-left">{{wear.id}}</span>  {{wear.name}}  <button class="btn btn-delete pull-right" (click)="delete(wear); $event.stopPropagation()">x</button></p>
     </li>
   </ul>
-  <div *ngIf="selectedWear">
-    <h2>
-      {{selectedWear.name }}
-    </h2>
-    <button class="btn btn-success" (click)="gotoDetail()">Edytuj</button>
-  </div>
-  <div>
-    <button class = "btn btn-primary" routerLink="/additem">Dodaj produkt</button>
+  <div class="row">
+    <div class="col-xs-6">
+      <button class = "btn " routerLink="/additem">Dodaj produkt</button>
+    </div>
+    <div class="col-xs-6" *ngIf="selectedWear">
+      <button class="btn pull-right" (click)="gotoDetail()">Edytuj</button>
+      <p class="pull-right selectedname">Chcesz edytować : {{selectedWear.name}}</p>
+    </div>
   </div>
 </div>

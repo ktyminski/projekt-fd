@@ -38,9 +38,9 @@ update(wear: Wear): Promise<Wear> {
     .catch(this.handleError);
 }
 
-create(name: string, description: string, price: number, image: string): Promise<Wear> {
+create(name: string, price: number, description: string, image: string): Promise<Wear> {
   return this.http
-    .post(this.clothesUrl, JSON.stringify({name: name, description: description, price: price, image:image}), {})
+    .post(this.clothesUrl, JSON.stringify({name: name,  price: price, description: description, image:image}), {})
     .toPromise()
     .then(res => res.json().data as Wear)
     .catch(this.handleError);

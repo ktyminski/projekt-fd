@@ -17,5 +17,4 @@ export class DashboardComponent implements OnInit {
    this.wearService.getClothes()
    .then(clothes => this.clothes = clothes);
  }
-
 }
